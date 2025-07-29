@@ -1,5 +1,5 @@
 import './i18n'; // <-- Make sure this is at the top
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
@@ -11,18 +11,17 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import Viewtrip from './view-trip/[tripId]/index.jsx';
 import MyTrips from './my-trips/index.jsx';
 import { ErrorBoundary } from './components/ErrorBoundary.jsx';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Hero from './components/custom/Hero';
 
 // Add these imports:
-import ProfileSetup from './travel-buddy/ProfileSetup.jsx'
-import BuddyDiscovery from './travel-buddy/BuddyDiscovery.jsx'
+import ProfileSetup from './travel-buddy/ProfileSetup.jsx';
+import BuddyDiscovery from './travel-buddy/BuddyDiscovery.jsx';
 
 // Update your router:
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />
+    element: <Hero />
   },
   {
     path: '/create-trip',
@@ -46,10 +45,6 @@ const router = createBrowserRouter([
     element: <BuddyDiscovery currentUser={JSON.parse(localStorage.getItem('travelBuddyProfile') || 'null')} />
   }
 ]);
-
-useEffect(() => {
-  AOS.init({ once: true });
-}, []);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

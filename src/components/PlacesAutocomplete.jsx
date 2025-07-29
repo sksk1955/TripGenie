@@ -41,8 +41,8 @@ const PlacesAutocomplete = ({ onSelect }) => {
         type="text"
         value={query}
         onChange={handleInputChange}
-        placeholder="Search for a place..."
-        className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+        placeholder="Enter your destination"
+        className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-900 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-colors duration-300"
       />
       
       {loading && (
